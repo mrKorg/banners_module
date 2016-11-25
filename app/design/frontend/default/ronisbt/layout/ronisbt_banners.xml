@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layout>
+    <cms_index_index>
+        <reference name="content">
+            <block type="ronisbt_banners/banners" template="ronisbt_banners/index.phtml" />
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/flexslider.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.flexslider.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/ronisbt_banners.js</name></action>
+        </reference>
+    </cms_index_index>
+</layout>

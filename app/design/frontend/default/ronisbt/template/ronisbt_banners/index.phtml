@@ -1,0 +1,28 @@
+<div class="ronisbt-banners">
+    <h1>Banners</h1>
+    <div class="flexslider">
+        <ul class="slides">
+            <?php $banners = $this->getBannersCollection(); ?>
+            <?php foreach ($banners as $item): ?>
+                <li>
+                    <h2>
+                        <?php echo $this->escapeHtml($item->getTitle()); ?>
+                    </h2>
+                    <a href="<?php echo $this->escapeHtml($item->getUrl()); ?>" target="_blank">
+                        <img src="<?php echo $this->helper('ronisbt_banners/image')
+                            ->init($item, 'small_image', $item->getImage())
+                            ->constrainOnly(true)
+                            ->keepAspectRatio(true)
+                            ->keepFrame(true)
+                            ->keepTransparency(true)
+                            ->resize(1000,600); ?>" alt="">
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <div class="custom-navigation">
+          <a href="#" class="flex-prev">Prev</a>
+          <a href="#" class="flex-next">Next</a>
+    </div>
+</div>
